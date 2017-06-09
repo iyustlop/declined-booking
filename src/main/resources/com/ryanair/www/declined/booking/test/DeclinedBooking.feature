@@ -1,13 +1,13 @@
-Feature: Calculator
-  As a user
-  I want to use a calculator
-  So that I don't need to calculate myself
+Feature: Declined Booking
+  As a user I want to book a flight up to decline the payment.
 
   Scenario: Add two numbers
     Given having "Mallorca" as destination
-    And having "15-08-2017" as holiday start date
-    And having "31-08-2017" as holiday finish date
+    And having "14/08/2017" as holiday start date
+    And having "21/08/2017" as holiday finish date
     And having "xxxxx" as credit card
-    When I connect to the url
-    And I introduce the destination and dates
+    When I introduce the destination and dates
+    And I add a passanger
+    And I select a outbound flight 
+    And I select a return flight
     Then the result should be 5
