@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.ryanair.www.declined.booking.pages.DeclinedBookingCheckOut;
 import com.ryanair.www.declined.booking.pages.DeclinedBookingFlights;
 import com.ryanair.www.declined.booking.pages.DeclinedBookingHomePage;
 import com.ryanair.www.declined.booking.pages.DeclinedBookingSeats;
@@ -35,6 +36,7 @@ public class DeclinedBookingSteps {
 	DeclinedBookingHomePage homepage;
 	DeclinedBookingFlights flights;
 	DeclinedBookingSeats seats;
+	DeclinedBookingCheckOut checkOut;
 
 	@Before
 	public void before() {
@@ -114,6 +116,13 @@ public class DeclinedBookingSteps {
 		seats = new DeclinedBookingSeats(driver);
 		seats.selection();
 		seats.selectionReturn();
+		seats.confirmSelection();
+	}
+	
+	@When("^I made the checkout$")
+	public void i_made_the_checkout() {
+		checkOut = new DeclinedBookingCheckOut(driver);
+		checkOut.checkOutClick();
 	}
 
 	@Then("^decline the payment$")

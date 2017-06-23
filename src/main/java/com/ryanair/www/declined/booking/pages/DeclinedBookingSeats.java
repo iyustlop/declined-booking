@@ -9,19 +9,18 @@ import org.openqa.selenium.WebElement;
 public class DeclinedBookingSeats {
 	
 	WebDriver driver;
-	
-	By firstSeat = By.xpath("//*[@id='scrollable']/div[1]/div/div[2]/div[10]/div[5]/span/span");
-	By secondSeat = By.xpath("//*[@id='scrollable']/div[1]/div/div[2]/div[10]/div[6]/span/span");
+	                         
+	By firstSeat = By.xpath("//*[@id='scrollable']/div[1]/div/div[2]/div[14]/div[5]/span/span");
+	By secondSeat = By.xpath("//*[@id='scrollable']/div[1]/div/div[2]/div[14]/div[6]/span/span");
 	
 	By nextButton = By.xpath("//*[@id='ngdialog1']/div[2]/div[1]/div/div[4]/dialog-footer/div[1]/button");
 	
-	By firstSeatReturn = By.xpath("//*[@id='scrollable']/div[1]/div/div[2]/div[14]/div[5]/span/span");
-	By secondSeatReturn = By.xpath("//*[@id='scrollable']/div[1]/div/div[2]/div[14]/div[6]/span/span");
+	By firstSeatReturn = By.xpath("//*[@id='scrollable']/div[1]/div/div[2]/div[7]/div[5]/span/span");
+	By secondSeatReturn = By.xpath("//*[@id='scrollable']/div[1]/div/div[2]/div[7]/div[6]/span/span");
 	
 	By nextButtonReturn = By.xpath("//*[@id='ngdialog1']/div[2]/div[1]/div/div[4]/dialog-footer/div[1]/button");
 	
 	By confirmButton = By.xpath("//*[@id='ngdialog1']/div[2]/div[1]/div/div[4]/dialog-footer/div[1]/button");
-	
 	
 	public DeclinedBookingSeats(WebDriver driver) {
 		this.driver = driver;

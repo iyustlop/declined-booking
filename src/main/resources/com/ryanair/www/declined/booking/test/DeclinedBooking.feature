@@ -11,4 +11,5 @@ Feature: Declined Booking
     And I select a outbound flight 
     And I select a return flight
     And I select two seats
+    And I made the checkout
     Then decline the payment
