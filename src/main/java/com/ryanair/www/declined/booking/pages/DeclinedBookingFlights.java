@@ -24,12 +24,11 @@ public class DeclinedBookingFlights {
 		this.driver = driver;
 	}
 
-	public void outboundFlight() {
+	public void outboundFlight() throws InterruptedException {
 		WebElement outboundButton = driver.findElement(firstOutboundFlight);
 		outboundButton.click();
 
-		WebElement myDynamicElement = (new WebDriverWait(driver, 10))
-				.until(ExpectedConditions.presenceOfElementLocated(By.id("continue")));
+		Thread.sleep(1000);
 		WebElement leisureClassOption = driver.findElement(leisureClass);
 		leisureClassOption.findElement(By.id("continue")).click();
 	}
@@ -39,8 +38,7 @@ public class DeclinedBookingFlights {
 		WebElement returnFlight = driver.findElement(secondReturnFlight);
 		returnFlight.click();
 
-		WebElement myDynamicElement = (new WebDriverWait(driver, 10))
-				.until(ExpectedConditions.presenceOfElementLocated(By.id("continue")));
+		Thread.sleep(1000);
 		try {
 			WebElement leisureClassOption2 = driver.findElement(leisureClass2);
 			leisureClassOption2.findElement(By.id("continue")).click();
@@ -50,8 +48,9 @@ public class DeclinedBookingFlights {
 
 	}
 
-	public void clickContinueButton() {
-		WebElement continueButton = driver.findElement(this.continueButton);
-		continueButton.click();
+	public void clickContinueButton() throws InterruptedException {
+		Thread.sleep(5000);
+		WebElement continueButtonClick = driver.findElement(continueButton);
+		continueButtonClick.click();
 	}
 }
