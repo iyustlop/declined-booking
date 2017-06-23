@@ -49,7 +49,7 @@ public class DeclinedBookingFlights {
 	}
 
 	public void clickContinueButton() throws InterruptedException {
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		WebElement continueButtonClick = driver.findElement(continueButton);
 		continueButtonClick.click();
 	}

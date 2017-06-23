@@ -10,9 +10,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.ryanair.www.declined.booking.pages.DeclinedBookingFlights;
 import com.ryanair.www.declined.booking.pages.DeclinedBookingHomePage;
+import com.ryanair.www.declined.booking.pages.DeclinedBookingSeats;
 
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class DeclinedBookingSteps {
@@ -32,6 +34,7 @@ public class DeclinedBookingSteps {
 
 	DeclinedBookingHomePage homepage;
 	DeclinedBookingFlights flights;
+	DeclinedBookingSeats seats;
 
 	@Before
 	public void before() {
@@ -104,6 +107,17 @@ public class DeclinedBookingSteps {
 		driver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS);
 		flights.returnFlight();
 		flights.clickContinueButton();
+	}
+
+	@When("^I select two seats$")
+	public void i_select_two_seats() {
+		seats = new DeclinedBookingSeats(driver);
+		seats.selection();
+		seats.selectionReturn();
+	}
+
+	@Then("^decline the payment$")
+	public void decline_the_payment() {
 	}
 
 }

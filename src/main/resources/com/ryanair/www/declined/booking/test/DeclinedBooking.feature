@@ -10,4 +10,5 @@ Feature: Declined Booking
     And I add a passanger
     And I select a outbound flight 
     And I select a return flight
-    Then the result should be 5
+    And I select two seats
+    Then decline the payment
