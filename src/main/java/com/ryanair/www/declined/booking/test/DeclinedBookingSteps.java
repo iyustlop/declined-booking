@@ -11,7 +11,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import com.ryanair.www.declined.booking.pages.DeclinedBookingFlights;
 import com.ryanair.www.declined.booking.pages.DeclinedBookingHomePage;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
@@ -95,15 +94,16 @@ public class DeclinedBookingSteps {
 	}
 
 	@When("^I select a outbound flight$")
-	public void i_select_a_outbound_flight() {
+	public void i_select_a_outbound_flight() throws InterruptedException {
 		flights = new DeclinedBookingFlights(driver);
 		flights.outboundFlight();
 	}
 
 	@When("^I select a return flight$")
-	public void i_select_a_return_flight() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+	public void i_select_a_return_flight() throws InterruptedException {
+		driver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS);
+		flights.returnFlight();
+		flights.clickContinueButton();
 	}
 
 }

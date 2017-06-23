@@ -3,6 +3,8 @@ package com.ryanair.www.declined.booking.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DeclinedBookingFlights {
 
@@ -12,6 +14,11 @@ public class DeclinedBookingFlights {
 			"//*[@id='flight-FR~2051~ ~~MAD~08/14/2017 08:35~PMI~08/14/2017 10:10~']/div/div[2]/flights-table-price/div/div");
 	By leisureClass = By.xpath(
 			"//*[@id='outbound']/form/div[3]/div/flights-table/div/div[1]/div[1]/div/flights-table-fares/div/div[1]/div[2]");
+	By secondReturnFlight = By.xpath(
+			"//*[@id='flight-FR~2054~ ~~PMI~08/21/2017 14:10~MAD~08/21/2017 15:45~']/div/div[2]/flights-table-price/div/div");
+	By leisureClass2 = By.xpath(
+			"//*[@id='inbound']/form/div[3]/div/flights-table/div/div[1]/div[2]/div/flights-table-fares/div/div[1]/div[2]");
+	By continueButton = By.xpath("//*[@id='booking-selection']/article/div[2]/section/div[2]/button");
 
 	public DeclinedBookingFlights(WebDriver driver) {
 		this.driver = driver;
@@ -21,11 +28,30 @@ public class DeclinedBookingFlights {
 		WebElement outboundButton = driver.findElement(firstOutboundFlight);
 		outboundButton.click();
 
+		WebElement myDynamicElement = (new WebDriverWait(driver, 10))
+				.until(ExpectedConditions.presenceOfElementLocated(By.id("continue")));
 		WebElement leisureClassOption = driver.findElement(leisureClass);
 		leisureClassOption.findElement(By.id("continue")).click();
 	}
 
-	public void returnFlight() {
+	public void returnFlight() throws InterruptedException {
+		Thread.sleep(1000);
+		WebElement returnFlight = driver.findElement(secondReturnFlight);
+		returnFlight.click();
 
+		WebElement myDynamicElement = (new WebDriverWait(driver, 10))
+				.until(ExpectedConditions.presenceOfElementLocated(By.id("continue")));
+		try {
+			WebElement leisureClassOption2 = driver.findElement(leisureClass2);
+			leisureClassOption2.findElement(By.id("continue")).click();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void clickContinueButton() {
+		WebElement continueButton = driver.findElement(this.continueButton);
+		continueButton.click();
 	}
 }
