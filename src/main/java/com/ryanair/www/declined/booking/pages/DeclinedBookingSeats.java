@@ -10,17 +10,18 @@ public class DeclinedBookingSeats {
 	
 	WebDriver driver;
 	                         
-	By firstSeat = By.xpath("//*[@id='scrollable']/div[1]/div/div[2]/div[14]/div[5]/span/span");
-	By secondSeat = By.xpath("//*[@id='scrollable']/div[1]/div/div[2]/div[14]/div[6]/span/span");
+	By firstSeat = By.xpath("//*[@id='scrollable']/div[1]/div/div[2]/div[11]/div[5]/span/span");
+	By secondSeat = By.xpath("//*[@id='scrollable']/div[1]/div/div[2]/div[11]/div[6]/span/span");
 	
 	By nextButton = By.xpath("//*[@id='ngdialog1']/div[2]/div[1]/div/div[4]/dialog-footer/div[1]/button");
 	
-	By firstSeatReturn = By.xpath("//*[@id='scrollable']/div[1]/div/div[2]/div[7]/div[5]/span/span");
-	By secondSeatReturn = By.xpath("//*[@id='scrollable']/div[1]/div/div[2]/div[7]/div[6]/span/span");
+	By firstSeatReturn = By.xpath("//*[@id='scrollable']/div[1]/div/div[2]/div[13]/div[5]/span/span");
+	By secondSeatReturn = By.xpath("//*[@id='scrollable']/div[1]/div/div[2]/div[13]/div[6]/span/span");
 	
 	By nextButtonReturn = By.xpath("//*[@id='ngdialog1']/div[2]/div[1]/div/div[4]/dialog-footer/div[1]/button");
 	
 	By confirmButton = By.xpath("//*[@id='ngdialog1']/div[2]/div[1]/div/div[4]/dialog-footer/div[1]/button");
+	By checkOutButton = By.xpath("//*[@id='booking-selection']/article/div[2]/section/div[2]/button");
 	
 	public DeclinedBookingSeats(WebDriver driver) {
 		this.driver = driver;
@@ -51,6 +52,11 @@ public class DeclinedBookingSeats {
 
 		WebElement confirmButtonClick = driver.findElement(confirmButton);
 		confirmButtonClick.click();
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		WebElement checkoutClick = driver.findElement(checkOutButton);
+		checkoutClick.click();
 	}
 
 }
