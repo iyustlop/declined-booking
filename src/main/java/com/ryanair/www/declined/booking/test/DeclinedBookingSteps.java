@@ -5,6 +5,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import cucumber.api.java.Before;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -13,10 +17,7 @@ import com.ryanair.www.declined.booking.pages.DeclinedBookingFlights;
 import com.ryanair.www.declined.booking.pages.DeclinedBookingHomePage;
 import com.ryanair.www.declined.booking.pages.DeclinedBookingSeats;
 
-import cucumber.api.java.Before;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+
 
 public class DeclinedBookingSteps {
 
