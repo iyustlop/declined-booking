@@ -8,7 +8,7 @@ public class DeclinedBookingCheckOut {
 	
 	WebDriver driver;
 	
-	By checkOutButton = By.xpath("//*[@id='booking-selection']/article/div[2]/section/div[2]/button");
+	By checkOutButton = By.xpath("//*[@id='declined.booking-selection']/article/div[2]/section/div[2]/button");
 	
 	public DeclinedBookingCheckOut(WebDriver driver) {
 		this.driver = driver;

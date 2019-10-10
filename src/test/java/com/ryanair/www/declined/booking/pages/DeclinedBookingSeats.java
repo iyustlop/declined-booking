@@ -21,7 +21,7 @@ public class DeclinedBookingSeats {
 	By nextButtonReturn = By.xpath("//*[@id='ngdialog1']/div[2]/div[1]/div/div[4]/dialog-footer/div[1]/button");
 	
 	By confirmButton = By.xpath("//*[@id='ngdialog1']/div[2]/div[1]/div/div[4]/dialog-footer/div[1]/button");
-	By checkOutButton = By.xpath("//*[@id='booking-selection']/article/div[2]/section/div[2]/button");
+	By checkOutButton = By.xpath("//*[@id='declined.booking-selection']/article/div[2]/section/div[2]/button");
 	
 	public DeclinedBookingSeats(WebDriver driver) {
 		this.driver = driver;

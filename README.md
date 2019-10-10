@@ -1,5 +1,5 @@
-# declined-booking
-declined-booking example
+# declined-declined.booking
+declined-declined.booking example
 
 How to execute:
 

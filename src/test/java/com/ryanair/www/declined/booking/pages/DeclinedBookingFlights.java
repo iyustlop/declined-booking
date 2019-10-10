@@ -3,8 +3,6 @@ package com.ryanair.www.declined.booking.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DeclinedBookingFlights {
 
@@ -18,7 +16,7 @@ public class DeclinedBookingFlights {
 			"//*[@id='flight-FR~2054~ ~~PMI~08/21/2017 14:10~MAD~08/21/2017 15:45~']/div/div[2]/flights-table-price/div/div");
 	By leisureClass2 = By.xpath(
 			"//*[@id='inbound']/form/div[3]/div/flights-table/div/div[1]/div[2]/div/flights-table-fares/div/div[1]/div[2]");
-	By continueButton = By.xpath("//*[@id='booking-selection']/article/div[2]/section/div[2]/button");
+	By continueButton = By.xpath("//*[@id='declined.booking-selection']/article/div[2]/section/div[2]/button");
 
 	public DeclinedBookingFlights(WebDriver driver) {
 		this.driver = driver;

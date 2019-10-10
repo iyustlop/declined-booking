@@ -1,22 +1,21 @@
 package com.ryanair.www.declined.booking.test;
 
+import com.ryanair.www.declined.booking.pages.DeclinedBookingSeats;
+import com.ryanair.www.declined.booking.pages.DeclinedBookingCheckOut;
+import com.ryanair.www.declined.booking.pages.DeclinedBookingFlights;
+import com.ryanair.www.declined.booking.pages.DeclinedBookingHomePage;
+
+import io.cucumber.java.Before;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
-
-import cucumber.api.java.Before;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import com.ryanair.www.declined.booking.pages.DeclinedBookingCheckOut;
-import com.ryanair.www.declined.booking.pages.DeclinedBookingFlights;
-import com.ryanair.www.declined.booking.pages.DeclinedBookingHomePage;
-import com.ryanair.www.declined.booking.pages.DeclinedBookingSeats;
-
 
 
 public class DeclinedBookingSteps {
@@ -30,7 +29,7 @@ public class DeclinedBookingSteps {
 	WebDriver driver;
 
 	private static final String url = "https://www.ryanair.com/ie/en/";
-	private static final String CHROME_DRIVER = "/home/sobremesa/Documentos/Java/declined-booking/src/main/resources/chromedriver";
+	private static final String CHROME_DRIVER = "./src/test/resources/chromedriver";
 
 	SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy");
 
