@@ -29,7 +29,7 @@ public class DeclinedBookingSteps {
 	WebDriver driver;
 
 	private static final String url = "https://www.ryanair.com/ie/en/";
-	private static final String CHROME_DRIVER = "./src/test/resources/chromedriver";
+	private static final String CHROME_DRIVER = "./src/test/resources/chromedriver.exe";
 
 	SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy");
 
